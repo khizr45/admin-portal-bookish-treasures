@@ -1,0 +1,44 @@
+.main-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #a05d31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Mid-Box{
+    border: 1px solid #eee4d0;
+    height: 60vh;
+    width: 55%;
+    background-color: #cfa67c;
+    display: flex;
+    justify-content: start;
+}
+
+.cover{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin-right: 7rem;
+}
+
+.Name,.Pass,.SBtn{
+    outline: none;
+    border: 1px solid #cfa67c;
+    border-radius: 5px;
+    padding:0.5rem;
+    margin-bottom: 1rem;
+} 
+
+.SBtn{
+    background-color: #3c2e27;
+    color: #cfa67c;
+    width: 100%;
+}
+
+.Right-Mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
