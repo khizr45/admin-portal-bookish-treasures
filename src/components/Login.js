@@ -7,9 +7,6 @@ function Login(){
     const [UN,setUN] = useState("");
     const [Pass,setPass] = useState("");
     const navigate = useNavigate();
-    // function ShiftToHome(){
-    //     navigate("/Home");
-    // }
     async function Authorize(){
         const response = await fetch("http://127.0.0.1:8000/auth/Admin",{
             method:'POST',
@@ -31,7 +28,7 @@ function Login(){
         }else{
             if(data.length > 0){
                 if(data[0].Password === Pass){
-                    navigate("/Home");
+                    navigate("/Admin/Dashboard");
                 }else{
                     toast.warning("Incorrect Password", {
                         position: toast.POSITION.TOP_RIGHT,
@@ -51,7 +48,7 @@ function Login(){
             <div className="Mid-Box">
                 <img src="images/login-cover2.jpeg" className="cover"/>
                 <div className="Right-Mid">
-                    <h2>Admin Login</h2>
+                    <h2 className="Head-Text">Admin Login</h2>
                     <input placeholder="Username" className="Name" onChange={(e)=>{setUN(e.target.value)}}/>
                     <input placeholder="Password" className="Pass" type="password" onChange={(e)=>{setPass(e.target.value)}}/>
                     <button className="SBtn" onClick={Authorize}>SignIn</button>

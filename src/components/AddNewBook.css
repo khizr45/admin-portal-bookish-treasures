@@ -1,0 +1,23 @@
+.Main-container{
+    background-color: #eee4d0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Isbn{
+    padding: 1rem;
+    outline: none;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    color: #3c2e27;
+}
+.Find-Btn{
+    background-color: #eee4d0;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin-top: 2rem;
+    cursor: pointer;
+}
