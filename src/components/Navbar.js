@@ -4,10 +4,20 @@ import { useNavigate } from 'react-router';
 import { useState } from 'react';
 
 function Navbar() {
+  function MoveTO(e){
+    const value = e.target.value;
+    if(value === "Add Book"){
+      navigate("/Admin/AddNewBook");
+    }else if( value === "Delete Book"){
+      navigate("/Admin/DeleteBook");
+    }else if(value === "Update Book Price"){
+      navigate('/Admin/UpdatePrice')
+    }
+  }
   const navigate = useNavigate();
   return (
     <div className='main-Nav'>
-        <select>
+        <select onChange={MoveTO}>
             <option>Books</option>
             <option>Add Book</option>
             <option>Delete Book</option>

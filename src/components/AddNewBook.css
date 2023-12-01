@@ -4,7 +4,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .Isbn{
@@ -13,6 +12,8 @@
     border: 1px solid #3c2e27;
     border-radius: 20px;
     color: #3c2e27;
+    font-size: medium;
+    font-weight: bold;
 }
 .Find-Btn{
     background-color: #eee4d0;
@@ -20,4 +21,94 @@
     border-radius: 20px;
     margin-top: 2rem;
     cursor: pointer;
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.book-form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3c2e27;
+    padding: 2rem;
+    border-radius: 20px;
+}
+.genre-menu{
+    background-color: #eee4d0;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+}
+.publisher-menu{
+    background-color: #eee4d0;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+.heading{
+    color: #3c2e27;
+}
+.book-dets{
+    display: flex;
+    justify-content: space-between;
+}
+.ebook-dets{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-left: 1rem;
+}
+.Extra-dets{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-left: 1rem;
+}
+.Extra-dets input{
+    padding: 1rem;
+    outline: none;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    color: #3c2e27;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.Extra-dets button{
+    background-color: #eee4d0;
+    color: #3c2e27;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.ebook-dets input{
+    padding: 1rem;
+    outline: none;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    color: #3c2e27;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.ebook-dets button{
+    background-color: #eee4d0;
+    color: #3c2e27;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.ebook-dets p{
+    color: #3c2e27;
+    font-size: large;
+    font-weight: 500;
 }

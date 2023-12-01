@@ -2,17 +2,6 @@ import './Home.css'
 import { useState,useEffect } from 'react';
 import Navbar from './Navbar';
 function Home(){
-    // const [isbn,setIsbn] = useState("");
-    // const [title,setTitle] = useState("");
-    // const [author,setauthor] = useState("");
-    // async function findDets(isbn){
-    //     const link = "https://openlibrary.org/api/books?bibkeys=ISBN:"+isbn+"&format=json&jscmd=data";
-    //     const data = await fetch(link);
-    //     const data2 = await data.json();
-    //     console.log(data2);
-    //     setauthor(data2['ISBN:'+isbn].authors[0].name);
-    //     setTitle(data2['ISBN:'+isbn].title);
-    // }
     const [PublishLogItems , setPublish] = useState([]);
     function DisplayItems(){
         CallPub();
@@ -81,12 +70,6 @@ function Home(){
                         </div>
                     </div>
                 </div>
-            {/* <div>
-                    <input placeholder='Input ISBN of book' onChange={(e)=>{setIsbn(e.target.value)}}></input>
-                    <button onClick={()=>findDets(isbn)}>Get Details</button>
-                    <h2>{title}</h2>
-                    <h2>{author}</h2>
-            </div> */}
         </div>
     )
 }

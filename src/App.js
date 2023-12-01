@@ -6,10 +6,12 @@ import Login from './components/Login';
 import Home from './components/Home';
 import NewAdminForm from './components/NewAdminForm';
 import AddNewBook from './components/AddNewBook';
+import DeleteBook from './components/DeleteBook';
+import Update_Price from './components/Update_Price';
 
 const router = createBrowserRouter([{
   path: '/',
-  element: <Login/>
+  element: <Login />
 },
 {
   path: '/Admin/Dashboard',
@@ -18,6 +20,18 @@ const router = createBrowserRouter([{
 {
   path:'/Admin/Register',
   element: <NewAdminForm />
+},
+{
+  path:'/Admin/AddNewBook',
+  element:<AddNewBook />
+},
+{
+  path:'/Admin/DeleteBook',
+  element:<DeleteBook />
+},
+{
+  path:'/Admin/UpdatePrice',
+  element:<Update_Price />
 }
 ])
 function App() {
