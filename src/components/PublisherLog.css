@@ -1,0 +1,28 @@
+.Publisher-Log-Main{
+    background-color: #eee4d0;
+    position: relative;
+}
+.all-publishers{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee4d0;
+}
+
+.Publisher-Log-Items{
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin: 1rem;
+    width: 45%;
+    height: 8rem;
+    background-color: #eee4d0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Publish-Head{
+    margin-left: 1rem;
+    color: #3c2e27;
+}

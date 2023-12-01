@@ -1,7 +1,9 @@
 import './Home.css'
 import { useState,useEffect } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router';
 function Home(){
+    const navigate = useNavigate();
     const [PublishLogItems , setPublish] = useState([]);
     function DisplayItems(){
         CallPub();
@@ -54,7 +56,7 @@ function Home(){
                             }
                         </div>
                         <div className='Log-btn'>
-                            <button>View Full Book log</button>
+                            <button onClick={()=>{navigate("/Admin/BookLog")}}>View Full Book log</button>
                         </div>
                     </div>
                     <div className='pub_log'>
@@ -67,6 +69,9 @@ function Home(){
                              return   <PublishItems key={index} Pname = {items.name} PContact = {items.phone_number} />
                             })
                             }
+                        </div>
+                        <div className='Log-btn'>
+                            <button onClick={()=>{navigate("/Admin/PublisherLog")}}>View Full Book log</button>
                         </div>
                     </div>
                 </div>

@@ -25,8 +25,8 @@ function Navbar() {
         </select>
 
         <button onClick={()=>{navigate("/Admin/Register")}}>Add New Admin</button>
-        <button>Orders</button>
-        <button>Books To Reorder</button>
+        <button onClick={()=>{navigate("/Admin/Orders")}}>Orders</button>
+        <button onClick={()=>{navigate("/Admin/BooksToReOrder")}}>Books To Reorder</button>
     </div>
   )
 }

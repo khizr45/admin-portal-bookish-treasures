@@ -1,0 +1,58 @@
+.OrdersMain{
+    background-color: #eee4d0;
+    position: relative;
+
+}
+
+.Orders{
+   height: auto;
+   width: 100vw;
+   display: flex;
+   flex-wrap: wrap;
+   background-color: #eee4d0;
+}
+.SingleOrder{
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    margin: 1rem;
+    width: 95%;
+    height: 8rem;
+    background-color: #eee4d0;
+    display: flex;
+    justify-content: space-between;
+}
+.Pending-Head{
+    color: #3c2e27;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.Comp-Order{
+    background-color: #eee4d0;
+    color: #3c2e27;
+    width: 20%;
+    padding: 1rem;
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    height: 50%;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.back-dash{
+    background-color: #eee4d0;
+    color: #3c2e27;
+    width: 20%;
+    padding: 1rem;
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid #3c2e27;
+    border-radius: 20px;
+    height: 50%;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}

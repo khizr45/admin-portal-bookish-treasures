@@ -8,6 +8,10 @@ import NewAdminForm from './components/NewAdminForm';
 import AddNewBook from './components/AddNewBook';
 import DeleteBook from './components/DeleteBook';
 import Update_Price from './components/Update_Price';
+import Orders from './components/Orders';
+import BooksToReorder from './components/BooksToReorder';
+import FullBookLog from './components/FullBookLog';
+import PublisherLog from './components/PublisherLog';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -32,6 +36,22 @@ const router = createBrowserRouter([{
 {
   path:'/Admin/UpdatePrice',
   element:<Update_Price />
+},
+{
+  path:'/Admin/Orders',
+  element:<Orders />
+},
+{
+  path:"/Admin/BooksToReOrder",
+  element: <BooksToReorder />
+},
+{
+  path:"/Admin/BookLog",
+  element:<FullBookLog />
+},
+{
+  path:"/Admin/PublisherLog",
+  element:<PublisherLog />
 }
 ])
 function App() {
