@@ -61,8 +61,8 @@ function Home(){
                     </div>
                     <div className='pub_log'>
                         <div className='Book_log_heads'>
-                            <h3 className='title_head'>Publisher ID</h3>
-                            <h3 className='book_log_author_head'>Name</h3>
+                            <h3 className='title_head'>Name</h3>
+                            <h3 className='book_log_author_head'>Contact</h3>
                         </div>
                         <div>
                             {PublishLogItems.map((items,index) => {

@@ -8,8 +8,6 @@ function Navbar() {
     const value = e.target.value;
     if(value === "Add Book"){
       navigate("/Admin/AddNewBook");
-    }else if( value === "Delete Book"){
-      navigate("/Admin/DeleteBook");
     }else if(value === "Update Book Price"){
       navigate('/Admin/UpdatePrice')
     }
@@ -20,13 +18,13 @@ function Navbar() {
         <select onChange={MoveTO}>
             <option>Books</option>
             <option>Add Book</option>
-            <option>Delete Book</option>
             <option>Update Book Price</option>
         </select>
 
         <button onClick={()=>{navigate("/Admin/Register")}}>Add New Admin</button>
         <button onClick={()=>{navigate("/Admin/Orders")}}>Orders</button>
         <button onClick={()=>{navigate("/Admin/BooksToReOrder")}}>Books To Reorder</button>
+        <button onClick={()=>{navigate("/customerSupport")}}>Customer Support</button>
     </div>
   )
 }
