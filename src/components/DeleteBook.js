@@ -19,7 +19,7 @@ function DeleteBook() {
             setTitle("");
             setAuthor("");
         }else{
-            const response = await fetch("http://127.0.0.1:8000/GetBook/Isbn",{
+            const response = await fetch("https://bookish-treasures-backend.onrender.com/GetBook/Isbn",{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -48,7 +48,7 @@ function DeleteBook() {
         }else{
             const userRes = prompt("Confirm Delete (ok to delete)");
             if(userRes === "ok" || userRes === "OK" || userRes === "oK" || userRes === "Ok"){
-                const response = await fetch("http://127.0.0.1:8000/Book/Delete",{
+                const response = await fetch("https://bookish-treasures-backend.onrender.com/Book/Delete",{
                     method:'POST',
                     headers: {
                         "Content-Type": "application/json",

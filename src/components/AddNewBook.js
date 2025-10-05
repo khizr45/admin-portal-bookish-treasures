@@ -39,10 +39,10 @@ function AddNewBook() {
         }
     }
     async function FindGenreAndPublishers(){
-        const response = await fetch("http://127.0.0.1:8000/book/genre");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/book/genre");
         const data = await response.json();
         setGenre(data);
-        const response2 = await fetch("http://127.0.0.1:8000/book/publishers");
+        const response2 = await fetch("https://bookish-treasures-backend.onrender.com/book/publishers");
         const data2 = await response2.json();
         setPublishers(data2);
     }
@@ -64,7 +64,7 @@ function AddNewBook() {
             const NewPubEmail = prompt("Enter Email of New Pulisher");
             setNewPublish(NewPubName);
             setBookPublisher(NewPubName);
-            const response = await fetch("http://127.0.0.1:8000/Admin/NewPublisher",{
+            const response = await fetch("https://bookish-treasures-backend.onrender.com/Admin/NewPublisher",{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function AddNewBook() {
                 position:toast.POSITION.TOP_RIGHT,
             })
         }else{
-            const response = await fetch("http://127.0.0.1:8000/Admin/AddBook",{
+            const response = await fetch("https://bookish-treasures-backend.onrender.com/Admin/AddBook",{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",

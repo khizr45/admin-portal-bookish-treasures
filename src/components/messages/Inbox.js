@@ -20,7 +20,7 @@ export const Inbox = () => {
     setUsername(user)
     setInitials(init)
   }
-  // const socket = io("http://localhost:8000")
+  // const socket = io("https://bookish-treasures-backend.onrender.com/")
   // socket.on('ResetUsers',async(newMessage,send,recv)=>{
   //   console.log('inbox pr aagaya')
   //   setUsers([])
@@ -28,9 +28,9 @@ export const Inbox = () => {
   // })
   async function getUsers(){
     setUsers([])
-    const response = await fetch('http://127.0.0.1:8000/all/senders')
+    const response = await fetch('https://bookish-treasures-backend.onrender.com/all/senders')
     const data = await response.json()
-    const response2 = await fetch('http://127.0.0.1:8000/get/unread/messages')
+    const response2 = await fetch('https://bookish-treasures-backend.onrender.com/get/unread/messages')
     const data2 = await response2.json()
     for(let i=0;i<data.length;i++){
       let initials = data[i].sender[0].toUpperCase().concat(data[i].sender[data[i].sender.length-1].toUpperCase())

@@ -11,7 +11,7 @@ function NewAdminForm() {
     const [Pass,setPass] = useState("");
     const [Pass2,setPass2] = useState("");
     async function Authorize(){
-        const response = await fetch("http://127.0.0.1:8000/auth/Admin",{
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/auth/Admin",{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function NewAdminForm() {
                     position: toast.POSITION.TOP_RIGHT,
                   });
             }else{
-                const response2 = await fetch("http://127.0.0.1:8000/RegisterAdmin",{
+                const response2 = await fetch("https://bookish-treasures-backend.onrender.com/RegisterAdmin",{
                     method:'POST',
                     headers: {
                         "Content-Type": "application/json",

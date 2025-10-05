@@ -24,7 +24,7 @@ export const SingleChat = (props) => {
     const [mess,setMess] = useState([
     ])
     const [SenderMessage,setSenderMessage] = useState('')
-    const socket = io("http://localhost:8000")
+    const socket = io("https://bookish-treasures-backend.onrender.com")
     socket.on('connect',()=>{
       console.log("single chat")
     })
@@ -33,7 +33,7 @@ export const SingleChat = (props) => {
       
       if(send === props.user){
         setMess(prevItems => [...prevItems,{sender:send,message:newMessage}])
-          const response = await fetch("http://127.0.0.1:8000/update/read_flag",{
+          const response = await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const SingleChat = (props) => {
     async function updateReadFlag(){
       let send = props.user
       let recv = 'admin'
-      const response = await fetch("http://127.0.0.1:8000/update/read_flag",{
+      const response = await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export const SingleChat = (props) => {
     }
     async function getMessages(){
       let user = props.user
-      const response = await fetch("http://127.0.0.1:8000/get/message/history",{
+      const response = await fetch("https://bookish-treasures-backend.onrender.com/get/message/history",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",

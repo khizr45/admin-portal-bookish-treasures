@@ -7,7 +7,7 @@ function ChatBox() {
   function messagePass(){
     socket.emit('userSendMessage','hello','admin','m.khizar133')
   }
-  const socket = io("http://localhost:8000")
+  const socket = io("https://bookish-treasures-backend.onrender.com")
     socket.on('newMess',(newMessage,send,recv)=>{
         setRecvMess(newMessage)
     })

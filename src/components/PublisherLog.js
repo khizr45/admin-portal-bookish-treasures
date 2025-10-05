@@ -8,7 +8,7 @@ function PublisherLog() {
     const navigate = useNavigate();
     const [PubItems,setPubItems] = useState([]);
     async function GetPublishers(){
-        const response = await fetch("http://127.0.0.1:8000/getPubs");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/getPubs");
         const data = await response.json();
         setPubItems(data);
     }

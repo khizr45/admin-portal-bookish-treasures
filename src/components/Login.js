@@ -8,7 +8,7 @@ function Login(){
     const [Pass,setPass] = useState("");
     const navigate = useNavigate();
     async function Authorize(){
-        const response = await fetch("http://127.0.0.1:8000/auth/Admin",{
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/auth/Admin",{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",

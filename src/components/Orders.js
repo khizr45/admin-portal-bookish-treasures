@@ -9,7 +9,7 @@ function Orders() {
     const [dataItems , setDataItems] = useState([]);
     async function OrderPick(){
         setDataItems([]);
-        const response = await fetch("http://127.0.0.1:8000/getOrders");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/getOrders");
         const data = await response.json();
         console.log(data);
         setDataItems(data);
@@ -37,7 +37,7 @@ export const ItemOrder = (props)=>{
     const [pay,setPay] = useState("");
     const [id,setId] = useState(0);
     async function OrderFulfil(){
-        const response = await fetch("http://127.0.0.1:8000/Order/UpdateStatus",{
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/Order/UpdateStatus",{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",

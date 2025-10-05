@@ -8,7 +8,7 @@ function FullBookLog() {
     const navigate = useNavigate();
     const [BooksItems , setBookItems] = useState([]);
     async function FindBooks(){
-        const response = await fetch("http://127.0.0.1:8000/getBooks");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/getBooks");
         const data = await response.json();
         setBookItems(data);
     }

@@ -11,7 +11,7 @@ function Home(){
         
     }
     async function CallPub(){
-        const response = await fetch("http://127.0.0.1:8000/getPubs");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/getPubs");
         const data = await response.json();
         setPublish(data);
         if(data.length > 5){
@@ -27,7 +27,7 @@ function Home(){
     }
     const [DataItems , SetItems] = useState([]);
     async function CallBook(){
-        const response = await fetch("http://127.0.0.1:8000/getBooks");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/getBooks");
         const data = await response.json();
         if(data.length > 5){
             data.splice(5,data.length);

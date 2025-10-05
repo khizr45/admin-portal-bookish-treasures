@@ -18,7 +18,7 @@ function Update_Price() {
                 position:toast.POSITION.TOP_RIGHT,
             });
         }else{
-            const response = await fetch("http://127.0.0.1:8000/GetBook/Isbn",{
+            const response = await fetch("https://bookish-treasures-backend.onrender.com/GetBook/Isbn",{
                 method:'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function Update_Price() {
         }else{
             const UserRes = prompt("Confirm Update (ok to confirm)");
             if(UserRes === "ok" || UserRes === "OK" || UserRes === "oK" || UserRes === "Ok"){
-                const response = await fetch("http://127.0.0.1:8000/Book/UpdatePrice",{
+                const response = await fetch("https://bookish-treasures-backend.onrender.com/Book/UpdatePrice",{
                     method:'POST',
                     headers: {
                         "Content-Type": "application/json",

@@ -10,7 +10,7 @@ function BooksToReorder() {
     const [BooksRe , setBooksRe] = useState([]);
     async function BooksPick(){
         setBooksRe([]);
-        const response = await fetch("http://127.0.0.1:8000/Book/ReOrder");
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/Book/ReOrder");
         const data = await response.json();
         setBooksRe(data);
     }
@@ -37,7 +37,7 @@ export const ReOrder_Books = (props)=>{
     async function qtyUpdate(){
         const is = props.isbn;
         const q = prompt("Enter Quantity to add");
-        const response = await fetch("http://127.0.0.1:8000/Book/UpdateQty",{
+        const response = await fetch("https://bookish-treasures-backend.onrender.com/Book/UpdateQty",{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",
