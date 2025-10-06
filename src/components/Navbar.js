@@ -1,7 +1,6 @@
 import React from 'react';
 import './Navbar.css';
 import { useNavigate } from 'react-router';
-import { useState } from 'react';
 
 function Navbar() {
   function MoveTO(e){

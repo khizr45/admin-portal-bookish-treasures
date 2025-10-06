@@ -2,7 +2,6 @@ import styles from './Inbox.module.css';
 import { Outlet, useNavigate} from 'react-router-dom';
 import { SingleChat } from './singleChat';
 import { useEffect, useState } from 'react';
-import { Socket, io } from 'socket.io-client';
 import Navbar from '../Navbar';
 
 export const Inbox = () => {

@@ -33,7 +33,6 @@ function Orders() {
 }
 
 export const ItemOrder = (props)=>{
-    const navigate = useNavigate();
     const [pay,setPay] = useState("");
     const [id,setId] = useState(0);
     async function OrderFulfil(){

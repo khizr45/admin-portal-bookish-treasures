@@ -3,7 +3,6 @@ import io from 'socket.io-client'
 
 function ChatBox() {
   const [recvMessage,setRecvMess] = useState('')
-  let user_id = 'admin'
   function messagePass(){
     socket.emit('userSendMessage','hello','admin','m.khizar133')
   }

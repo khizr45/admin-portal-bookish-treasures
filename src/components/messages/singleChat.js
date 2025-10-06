@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import styles from './SingleChat.module.css';
 import SendIcon from '@mui/icons-material/Send';
 import io from 'socket.io-client'
-import { NavBar } from '../Navbar';
 export const SingleChatLogo = () => {
   return (
       <div
