@@ -19,6 +19,9 @@ export const SingleChatLogo = () => {
 };
 
 export const SingleChat = (props) => {
+    // Destructure props to avoid including entire props object in dependencies
+    const { user, initials, updateUsers } = props;
+    
     // let user = useSelector(state=>state.user)
     const [mess,setMess] = useState([
     ])
@@ -30,7 +33,7 @@ export const SingleChat = (props) => {
     socket.emit('userOnline','admin')
     socket.on('newMess',async(newMessage,send,recv)=>{
       
-      if(send === props.user){
+      if(send === user){
         setMess(prevItems => [...prevItems,{sender:send,message:newMessage}])
           await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
@@ -40,12 +43,12 @@ export const SingleChat = (props) => {
               body: JSON.stringify({send,recv})
           });
       }else{
-        props.updateUsers()
+        updateUsers()
       }
     })
 
     const updateReadFlag = useCallback(async () => {
-      let send = props.user
+      let send = user
       let recv = 'admin'
       await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
@@ -54,16 +57,16 @@ export const SingleChat = (props) => {
               },
               body: JSON.stringify({send,recv})
           });
-    }, [props.user]);
+    }, [user]);
 
     const getMessages = useCallback(async () => {
-      let user = props.user
+      let userParam = user
       const response = await fetch("https://bookish-treasures-backend.onrender.com/get/message/history",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",
               },
-              body: JSON.stringify({user})
+              body: JSON.stringify({user: userParam})
           });
 
       const data = await response.json()
@@ -71,16 +74,16 @@ export const SingleChat = (props) => {
       for(let i=1;i<data.length;i++){
         setMess(prevItems=>[...prevItems,{sender:data[i].sender,message: data[i].message}])
       }
-    }, [props.user]);
+    }, [user]);
     useEffect(()=>{
-        props.updateUsers()
+        updateUsers()
           getMessages()
           updateReadFlag()
-    },[props.user, props.updateUsers, getMessages, updateReadFlag])
+    },[user, updateUsers, getMessages, updateReadFlag])
 
     function newSenderMessage(){
       setMess(prevItems => [...prevItems,{sender:'admin',message:SenderMessage}])
-      socket.emit('userSendMessage',SenderMessage,'admin',props.user)
+      socket.emit('userSendMessage',SenderMessage,'admin',user)
       setSenderMessage('')
     }
   return (
@@ -91,11 +94,11 @@ export const SingleChat = (props) => {
           <div className={styles.chatHeader}>
             <div className={styles.chatAvatar}>
               <h4>
-                {props.initials}
+                {initials}
               </h4>
             </div>
             <div>
-              <h4 className={styles.headingg}>{props.user}</h4>
+              <h4 className={styles.headingg}>{user}</h4>
             </div>
           </div>
           <div className={styles.messages}>
@@ -110,7 +113,7 @@ export const SingleChat = (props) => {
                         }
                         >
                         <div className={styles.messageAvatar}>
-                            <h4>{message.sender==='admin' ? 'CS' : props.initials}</h4>
+                            <h4>{message.sender==='admin' ? 'CS' : initials}</h4>
                         </div>
                         <div
                             className={ message.sender === 'admin'

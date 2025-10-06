@@ -28,11 +28,11 @@ function NewAdminForm() {
                 position:toast.POSITION.TOP_RIGHT,
             })
         }else{
-            if(data.length != 0){
+            if(data.length !== 0){
                 toast.error("UserName Already exsists", {
                     position: toast.POSITION.TOP_RIGHT,
                   });
-            }else if(Pass != Pass2){
+            }else if(Pass !== Pass2){
                 toast.error("Both Passwords doesnot match", {
                     position: toast.POSITION.TOP_RIGHT,
                   });
@@ -59,7 +59,7 @@ function NewAdminForm() {
         <div className="main-container">
             <ToastContainer />
             <div className="Mid-Box">
-                <img src="/images/login-cover2.jpeg" className="cover"/>
+                <img src="/images/login-cover2.jpeg" className="cover" alt="Admin registration cover"/>
                 <div className="Right-Mid">
                     <h2 className="Head-Text">Admin Register</h2>
                     <input placeholder="Username" className="Name" onChange={(e)=>{setUN(e.target.value)}}/>

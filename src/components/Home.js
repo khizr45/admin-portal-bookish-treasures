@@ -1,15 +1,14 @@
 import './Home.css'
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useCallback } from 'react';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router';
 function Home(){
     const navigate = useNavigate();
     const [PublishLogItems , setPublish] = useState([]);
-    function DisplayItems(){
+    const DisplayItems = useCallback(() => {
         CallPub();
         CallBook();
-        
-    }
+    }, []);
     async function CallPub(){
         const response = await fetch("https://bookish-treasures-backend.onrender.com/getPubs");
         const data = await response.json();
@@ -38,8 +37,7 @@ function Home(){
     }
     useEffect(()=>{
        DisplayItems();
-
-    },[]);
+    },[DisplayItems]);
     return (
         <div className='Home-main'>
                 <Navbar />

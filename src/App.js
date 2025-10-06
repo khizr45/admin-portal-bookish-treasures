@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import NewAdminForm from './components/NewAdminForm';
 import AddNewBook from './components/AddNewBook';
-import Update_Price from './components/Update_Price';
+import UpdatePrice from './components/Update_Price';
 import Orders from './components/Orders';
 import BooksToReorder from './components/BooksToReorder';
 import FullBookLog from './components/FullBookLog';
@@ -31,7 +31,7 @@ const router = createBrowserRouter([{
 },
 {
   path:'/Admin/UpdatePrice',
-  element:<Update_Price />
+  element:<UpdatePrice />
 },
 {
   path:'/Admin/Orders',

@@ -25,7 +25,7 @@ function BooksToReorder() {
         <h1 className='reorder-head'>Books To ReOrder</h1>
         <div className='Books-List'>
             {BooksRe&&BooksRe.map((items,index)=>{
-                return <ReOrder_Books key={index} isbn={items.book_isbn} title={items.title}
+                return <ReOrderBooks key={index} isbn={items.book_isbn} title={items.title}
                 price={items.price} qty={items.quantity} reload={BooksPick}/>
             })}
         </div>
@@ -33,7 +33,7 @@ function BooksToReorder() {
   )
 }
 
-export const ReOrder_Books = (props)=>{
+export const ReOrderBooks = (props)=>{
     async function qtyUpdate(){
         const is = props.isbn;
         const q = prompt("Enter Quantity to add");

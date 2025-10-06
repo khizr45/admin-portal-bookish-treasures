@@ -46,7 +46,7 @@ function Login(){
         <div className="main-container">
             <ToastContainer />
             <div className="Mid-Box">
-                <img src="images/login-cover2.jpeg" className="cover"/>
+                <img src="images/login-cover2.jpeg" className="cover" alt="Login cover"/>
                 <div className="Right-Mid">
                     <h2 className="Head-Text">Admin Login</h2>
                     <input placeholder="Username" className="Name" onChange={(e)=>{setUN(e.target.value)}}/>

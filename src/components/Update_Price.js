@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router';
 import './Update_Price.css'
 
-function Update_Price() {
+function UpdatePrice() {
     const navigate = useNavigate();
     const [isbn,setIsbn] = useState("")
     const [Title,setTitle] = useState("")
@@ -80,4 +80,4 @@ function Update_Price() {
   )
 }
 
-export default Update_Price
+export default UpdatePrice
