@@ -23,7 +23,7 @@ function Navbar() {
         <button onClick={()=>{navigate("/Admin/Register")}}>Add New Admin</button>
         <button onClick={()=>{navigate("/Admin/Orders")}}>Orders</button>
         <button onClick={()=>{navigate("/Admin/BooksToReOrder")}}>Books To Reorder</button>
-        <button onClick={()=>{navigate("/customerSupport")}}>Customer Support</button>
+        {/* <button onClick={()=>{navigate("/customerSupport")}}>Customer Support</button> */}
     </div>
   )
 }
