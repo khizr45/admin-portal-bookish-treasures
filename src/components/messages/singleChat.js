@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import styles from './SingleChat.module.css';
 import SendIcon from '@mui/icons-material/Send';
 import io from 'socket.io-client'
@@ -32,7 +32,7 @@ export const SingleChat = (props) => {
       
       if(send === props.user){
         setMess(prevItems => [...prevItems,{sender:send,message:newMessage}])
-          const response = await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
+          await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",
@@ -44,18 +44,19 @@ export const SingleChat = (props) => {
       }
     })
 
-    async function updateReadFlag(){
+    const updateReadFlag = useCallback(async () => {
       let send = props.user
       let recv = 'admin'
-      const response = await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
+      await fetch("https://bookish-treasures-backend.onrender.com/update/read_flag",{
               method:'POST',
               headers: {
                   "Content-Type": "application/json",
               },
               body: JSON.stringify({send,recv})
           });
-    }
-    async function getMessages(){
+    }, [props.user]);
+
+    const getMessages = useCallback(async () => {
       let user = props.user
       const response = await fetch("https://bookish-treasures-backend.onrender.com/get/message/history",{
               method:'POST',
@@ -70,12 +71,12 @@ export const SingleChat = (props) => {
       for(let i=1;i<data.length;i++){
         setMess(prevItems=>[...prevItems,{sender:data[i].sender,message: data[i].message}])
       }
-    }
+    }, [props.user]);
     useEffect(()=>{
         props.updateUsers()
           getMessages()
           updateReadFlag()
-    },[props.user])
+    },[props.user, props.updateUsers, getMessages, updateReadFlag])
 
     function newSenderMessage(){
       setMess(prevItems => [...prevItems,{sender:'admin',message:SenderMessage}])

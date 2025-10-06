@@ -43,7 +43,7 @@ export const ItemOrder = (props)=>{
                 },
                 body: JSON.stringify({id})
             });
-        const data = await response.json();
+        await response.json();
         props.order_func();
     }
     useEffect(()=>{
@@ -53,7 +53,7 @@ export const ItemOrder = (props)=>{
             setPay("Done")
         }
         setId(props.order_no);
-    },[])
+    },[props.payment, props.order_no])
     return(
         <div className='SingleOrder'>
             <div>

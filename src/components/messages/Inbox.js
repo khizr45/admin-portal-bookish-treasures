@@ -1,5 +1,5 @@
 import styles from './Inbox.module.css';
-import { Outlet, useNavigate} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { SingleChat } from './singleChat';
 import { useEffect, useState } from 'react';
 import Navbar from '../Navbar';
@@ -13,7 +13,6 @@ export const Inbox = () => {
     const [username,setUsername] = useState('')
     const [initials,setInitials] = useState('')
 
-  const navigate = useNavigate()
   function navigateToChat(user,init){
     setChatOpen(1)
     setUsername(user)
@@ -33,7 +32,7 @@ export const Inbox = () => {
     const data2 = await response2.json()
     for(let i=0;i<data.length;i++){
       let initials = data[i].sender[0].toUpperCase().concat(data[i].sender[data[i].sender.length-1].toUpperCase())
-      if(data[i].sender != 'admin'){
+      if(data[i].sender !== 'admin'){
         let unread_messages = 0
         for(let j=0;j<data2.length;j++){
           if(data[i].sender === data2[j].sender){
